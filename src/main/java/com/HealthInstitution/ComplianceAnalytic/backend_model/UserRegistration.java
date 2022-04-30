@@ -3,23 +3,25 @@ package com.HealthInstitution.ComplianceAnalytic.backend_model;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name="user")
+@Table(name="users")
 @DynamicUpdate(true)
 public class UserRegistration {
+    @GeneratedValue(strategy=GenerationType.AUTO)
     @Id
     private Long id;
     private String FirstName;
     private String LastName;
     private  String Location;
     private HealphcareCategory healphcareCategory;
-    private Date StatingDate;
-    private Date TodayDate;
+    private LocalDate StatingDate;
+    private LocalDate TodayDate;
     private String UserName;
     private String Email;
     private  String Password;
@@ -38,7 +40,7 @@ public class UserRegistration {
     public UserRegistration() {
     }
 
-    public UserRegistration(Long id, String firstName, String lastName, String location, HealphcareCategory healphcareCategory, Date statingDate, Date todayDate, String userName, String email, String password, boolean active) {
+    public UserRegistration(Long id, String firstName, String lastName, String location, HealphcareCategory healphcareCategory, LocalDate statingDate, LocalDate todayDate, String userName, String email, String password, boolean active) {
         this.id = id;
         FirstName = firstName;
         LastName = lastName;
@@ -52,7 +54,7 @@ public class UserRegistration {
         Active = active;
     }
 
-    public UserRegistration(String firstName, String lastName, String location, HealphcareCategory healphcareCategory, Date statingDate, Date todayDate, String userName, String email, String password, boolean active) {
+    public UserRegistration(String firstName, String lastName, String location, HealphcareCategory healphcareCategory, LocalDate statingDate, LocalDate todayDate, String userName, String email, String password, boolean active) {
         FirstName = firstName;
         LastName = lastName;
         Location = location;
@@ -105,19 +107,19 @@ public class UserRegistration {
         this.healphcareCategory = healphcareCategory;
     }
 
-    public Date getStatingDate() {
+    public LocalDate getStatingDate() {
         return StatingDate;
     }
 
-    public void setStatingDate(Date statingDate) {
+    public void setStatingDate(LocalDate statingDate) {
         StatingDate = statingDate;
     }
 
-    public Date getTodayDate() {
+    public LocalDate getTodayDate() {
         return TodayDate;
     }
 
-    public void setTodayDate(Date todayDate) {
+    public void setTodayDate(LocalDate todayDate) {
         TodayDate = todayDate;
     }
 

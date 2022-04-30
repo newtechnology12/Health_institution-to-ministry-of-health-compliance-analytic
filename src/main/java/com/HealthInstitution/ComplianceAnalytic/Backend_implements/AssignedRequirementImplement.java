@@ -4,7 +4,9 @@ import com.HealthInstitution.ComplianceAnalytic.backend_model.UserRegistration;
 import com.HealthInstitution.ComplianceAnalytic.backend_repostory.UserRegistrationRepostory;
 import com.HealthInstitution.ComplianceAnalytic.backend_services.AssignedRequirementsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AssignedRequirementImplement implements AssignedRequirementsService {
     @Autowired
     private UserRegistrationRepostory userRegistrationRepostory;
